@@ -5,5 +5,6 @@ class CustomColors {
   static const white = Color(0xffFFFFFF);
   static const black = Color(0xff010101);
   static const green = Color(0xffC6F432);
-  static const purpul = Color(0xffC09FF8);
+  static const purple = Color(0xffC09FF8);
+  static const grey = Color(0xffBDBDBD);
 }
