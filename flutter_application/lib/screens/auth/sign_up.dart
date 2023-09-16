@@ -25,23 +25,23 @@ class SignUpScreen extends StatelessWidget {
             const CustomTextField(
               hint: 'Name',
             ),
-            kVSpace16,
+            kHSpace16,
             const CustomTextField(
               hint: 'Email',
             ),
-            kVSpace16,
+            kHSpace16,
             CustomTextField(
               onPressed: () {},
               hint: 'Password',
               isIcon: true,
             ),
-            kVSpace16,
+            kHSpace16,
             CustomTextField(
               onPressed: () {},
               hint: 'Confirm Password',
               isIcon: true,
             ),
-            kVSpace64,
+            kHSpace64,
             CustomElevatedButton(
               onPressed: () {},
               child: 'Sign Up',

@@ -22,7 +22,7 @@ class SignInScreen extends StatelessWidget {
               hint: 'User Name',
               onPressed: () {},
             ),
-            kVSpace16,
+            kHSpace16,
             CustomTextField(
               hint: 'Password',
               onPressed: () {},
