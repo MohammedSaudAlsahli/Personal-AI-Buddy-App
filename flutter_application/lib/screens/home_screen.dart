@@ -47,7 +47,10 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const Text(
                   'How may I help you today?',
-                  style: TextStyle(color: CustomColors.white, fontSize: 42),
+                  style: TextStyle(
+                      color: CustomColors.white,
+                      fontSize: 42,
+                      fontWeight: FontWeight.w600),
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,

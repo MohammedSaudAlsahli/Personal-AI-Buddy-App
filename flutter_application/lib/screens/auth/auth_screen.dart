@@ -36,8 +36,8 @@ class AuthScreen extends StatelessWidget {
               text: 'How may I help you today!',
             ),
             CustomElevatedButton(
-              onPressed: () {},
               child: 'Get Started',
+              onPressed: () {},
             ),
           ],
         )

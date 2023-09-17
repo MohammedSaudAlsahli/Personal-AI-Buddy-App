@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/componants/containers/circle_container.dart';
 
+/* need to fix this containers, it shoud be row -> column -> icon*/
 class AiToolsContainer extends StatelessWidget {
   const AiToolsContainer({
     super.key,
-    required this.height,
-    required this.width,
-    required this.icon,
+    this.onTap,
     required this.text,
+    required this.icon,
+    required this.width,
     required this.isBold,
+    required this.height,
     required this.bgColor,
     required this.fontSize,
     this.fgColor = Colors.black12,
@@ -22,38 +24,40 @@ class AiToolsContainer extends StatelessWidget {
   final IconData icon;
   final Color bgColor;
   final double fontSize;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: const BorderRadius.all(
-          Radius.circular(24),
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              CircleContainer(containerColor: fgColor, icon: icon),
-              Image.asset(
-                  'assets/Personal AI Buddy App (Community)/🦆 icon _arrow forward_.png')
-            ],
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          color: bgColor,
+          borderRadius: const BorderRadius.all(
+            Radius.circular(24),
           ),
-          Text(
-            text,
-            textAlign: TextAlign.start,
-            style: TextStyle(
-                fontSize: fontSize,
-                fontWeight: isBold ? FontWeight.w700 : FontWeight.normal),
-          )
-        ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CircleContainer(containerColor: fgColor, icon: icon),
+                const Icon(Icons.arrow_outward_rounded)
+              ],
+            ),
+            Text(
+              text,
+              style: TextStyle(
+                  fontSize: fontSize,
+                  fontWeight: isBold ? FontWeight.w700 : FontWeight.normal),
+            )
+          ],
+        ),
       ),
     );
   }
