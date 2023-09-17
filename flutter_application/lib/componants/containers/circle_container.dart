@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/constant/colors.dart';
 
 class CircleContainer extends StatelessWidget {
   const CircleContainer({
     super.key,
     required this.icon,
-    required this.color,
+    this.containerColor,
+    this.isBorder = false,
+    this.iconColor = CustomColors.black,
   });
   final IconData icon;
-  final Color color;
+  final Color iconColor;
+  final Color? containerColor;
+  final bool isBorder;
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 40,
       width: 40,
-      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-      child: Icon(icon),
+      decoration: BoxDecoration(
+        color: containerColor,
+        shape: BoxShape.circle,
+        border: isBorder
+            ? Border.all(
+                color: CustomColors.white.withOpacity(0.5),
+              )
+            : null,
+      ),
+      child: Icon(icon, color: iconColor),
     );
   }
 }

@@ -6,22 +6,22 @@ class AiToolsContainer extends StatelessWidget {
     super.key,
     required this.height,
     required this.width,
-    required this.bgColor,
-    required this.fgColor,
     required this.icon,
     required this.text,
-    required this.fontSize,
     required this.isBold,
+    required this.bgColor,
+    required this.fontSize,
+    this.fgColor = Colors.black12,
   });
 
-  final double height;
-  final double width;
-  final Color bgColor;
-  final Color fgColor;
-  final IconData icon;
   final String text;
-  final double fontSize;
   final bool isBold;
+  final double width;
+  final Color fgColor;
+  final double height;
+  final IconData icon;
+  final Color bgColor;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class AiToolsContainer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CircleContainer(color: fgColor, icon: icon),
+              CircleContainer(containerColor: fgColor, icon: icon),
               Image.asset(
                   'assets/Personal AI Buddy App (Community)/🦆 icon _arrow forward_.png')
             ],

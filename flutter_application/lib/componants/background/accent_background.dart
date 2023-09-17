@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/componants/containers/background_image.dart';
 import 'package:flutter_application/constant/colors.dart';
 
 class CustomAccentBackground extends StatelessWidget {
@@ -8,50 +9,33 @@ class CustomAccentBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Positioned(
+        const Positioned(
           top: 100,
           right: 300,
-          child: Image.asset(
-            'assets/Personal AI Buddy App (Community)/Group 2.png',
-            color: CustomColors.white,
-            fit: BoxFit.none,
-            scale: 4,
-          ),
+          child: BackgroundImage(
+              image: 'assets/Personal AI Buddy App (Community)/Group 2.png',
+              scale: 4),
         ),
-        Positioned(
+        const Positioned(
           top: 100,
           right: -300,
-          child: Image.asset(
-            'assets/Personal AI Buddy App (Community)/Group 2.png',
-            color: CustomColors.white,
-            fit: BoxFit.none,
-            scale: 4,
-          ),
+          child: BackgroundImage(
+              image: 'assets/Personal AI Buddy App (Community)/Group 2.png',
+              scale: 4),
         ),
-        Positioned(
+        const Positioned(
           top: 400,
           right: 200,
-          child: Image.asset(
-            'assets/Personal AI Buddy App (Community)/Group 1.png',
-            color: CustomColors.white,
-            fit: BoxFit.none,
-            scale: 3,
-          ),
+          child: BackgroundImage(
+              image: 'assets/Personal AI Buddy App (Community)/Group 1.png',
+              scale: 3),
         ),
-        Positioned(
+        const Positioned(
           top: 500,
           right: -200,
-          child: Image.asset(
-            'assets/Personal AI Buddy App (Community)/Group 1.png',
-            color: CustomColors.white,
-            fit: BoxFit.none,
-            scale: 5,
-          ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            color: CustomColors.black.withOpacity(0.5),
-          ),
+          child: BackgroundImage(
+              image: 'assets/Personal AI Buddy App (Community)/Group 2.png',
+              scale: 5),
         ),
         Center(
           child: Transform.rotate(
@@ -62,19 +46,18 @@ class CustomAccentBackground extends StatelessWidget {
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                    color: CustomColors.green.withAlpha(
-                      90,
-                    ),
+                    color: CustomColors.green.withAlpha(90),
                     blurRadius: 120.0,
-                    spreadRadius: 0.0,
-                    offset: const Offset(
-                      0.0,
-                      3.0,
-                    ),
+                    offset: const Offset(0.0, 3.0),
                   ),
                 ],
               ),
             ),
+          ),
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: CustomColors.black.withOpacity(0.5),
           ),
         ),
       ],

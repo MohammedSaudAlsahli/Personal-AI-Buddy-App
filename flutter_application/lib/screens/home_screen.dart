@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/constant/colors.dart';
 import 'package:flutter_application/constant/spaceing.dart';
 import 'package:flutter_application/componants/background/accent_background.dart';
 import 'package:flutter_application/componants/containers/ai_tools_container.dart';
@@ -23,12 +24,15 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const CircleContainer(
-                        color: Colors.amber, icon: Icons.menu),
+                      isBorder: true,
+                      icon: Icons.menu,
+                      iconColor: CustomColors.white,
+                    ),
                     Row(
                       children: [
                         const Text(
                           'Hi, name',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: CustomColors.white),
                         ),
                         kHSpace4,
                         Image.asset(
@@ -43,44 +47,41 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const Text(
                   'How may I help you today?',
-                  style: TextStyle(color: Colors.amber, fontSize: 42),
+                  style: TextStyle(color: CustomColors.white, fontSize: 42),
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     AiToolsContainer(
-                      height: 216,
                       width: 183,
-                      bgColor: Colors.amber,
-                      fgColor: Colors.amberAccent,
-                      icon: Icons.record_voice_over,
-                      text: 'Talk with Bot',
+                      height: 216,
                       fontSize: 34,
                       isBold: true,
+                      text: 'Talk with Bot',
+                      icon: Icons.record_voice_over,
+                      bgColor: CustomColors.green,
                     ),
                     kWSpace8,
                     Column(
                       children: [
                         AiToolsContainer(
-                          height: 104,
                           width: 183,
-                          bgColor: Colors.red,
-                          fgColor: Colors.redAccent,
-                          icon: Icons.chat,
-                          text: 'Chat with Bot',
+                          height: 104,
                           fontSize: 16,
                           isBold: false,
+                          icon: Icons.chat,
+                          text: 'Chat with Bot',
+                          bgColor: CustomColors.purple,
                         ),
                         kHSpace8,
                         AiToolsContainer(
-                          height: 104,
                           width: 183,
-                          bgColor: Colors.blue,
-                          fgColor: Colors.blueAccent,
-                          icon: Icons.image_search_rounded,
-                          text: 'Search by Image',
+                          height: 104,
                           fontSize: 16,
                           isBold: false,
+                          text: 'Search by Image',
+                          bgColor: CustomColors.pink,
+                          icon: Icons.image_search_rounded,
                         ),
                       ],
                     )
@@ -94,41 +95,43 @@ class HomeScreen extends StatelessWidget {
                         const Text(
                           'History',
                           style: TextStyle(
-                              color: Colors.amber,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 20),
+                            fontSize: 20,
+                            color: CustomColors.white,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                         TextButton(
                           onPressed: () {},
                           child: const Text(
                             'See all',
                             style: TextStyle(
-                                color: Colors.amber,
-                                fontWeight: FontWeight.w100),
+                              color: CustomColors.white,
+                              fontWeight: FontWeight.w300,
+                            ),
                           ),
                         ),
                       ],
                     ),
                     HistoryConteiner(
-                      bgColor: Colors.amber,
-                      fgColor: Colors.amberAccent,
                       icon: Icons.abc,
+                      fgColor: CustomColors.green,
+                      bgColor: CustomColors.blackShade,
                       text: 'I need some UI inspiration for dark...',
                       onPressed: () {},
                     ),
                     kHSpace8,
                     HistoryConteiner(
-                      bgColor: Colors.amber,
-                      fgColor: Colors.amberAccent,
                       icon: Icons.abc,
+                      fgColor: CustomColors.purple,
+                      bgColor: CustomColors.blackShade,
                       text: 'Show me some color palettes for AI...',
                       onPressed: () {},
                     ),
                     kHSpace8,
                     HistoryConteiner(
-                      bgColor: Colors.amber,
-                      fgColor: Colors.amberAccent,
                       icon: Icons.abc,
+                      fgColor: CustomColors.pink,
+                      bgColor: CustomColors.blackShade,
                       text: 'What are the best mobile apps 2023...',
                       onPressed: () {},
                     ),

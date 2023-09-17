@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/componants/containers/circle_container.dart';
+import 'package:flutter_application/constant/colors.dart';
 import 'package:flutter_application/utils/extension.dart';
 
 class HistoryConteiner extends StatelessWidget {
   const HistoryConteiner({
     super.key,
-    required this.bgColor,
-    required this.fgColor,
+    this.onPressed,
     required this.icon,
     required this.text,
-    this.onPressed,
+    required this.bgColor,
+    this.fgColor = Colors.black12,
   });
-  final Color bgColor;
-  final Color fgColor;
-  final IconData icon;
   final String text;
+  final Color fgColor;
+  final Color bgColor;
+  final IconData icon;
   final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class HistoryConteiner extends StatelessWidget {
       height: 70,
       width: context.width,
       decoration: BoxDecoration(
+        border: Border.all(color: CustomColors.white, width: 0.3),
         color: bgColor,
         borderRadius: const BorderRadius.all(
           Radius.circular(24),
@@ -31,11 +33,20 @@ class HistoryConteiner extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           CircleContainer(
-            color: fgColor,
             icon: icon,
+            containerColor: fgColor,
           ),
-          Text(text),
-          IconButton(onPressed: onPressed, icon: const Icon(Icons.more_vert))
+          Text(
+            text,
+            style: const TextStyle(color: CustomColors.white),
+          ),
+          IconButton(
+            onPressed: onPressed,
+            icon: const Icon(
+              Icons.more_vert,
+              color: CustomColors.white,
+            ),
+          )
         ],
       ),
     );
