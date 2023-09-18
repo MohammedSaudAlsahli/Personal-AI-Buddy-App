@@ -8,16 +8,19 @@ class CircleContainer extends StatelessWidget {
     this.containerColor,
     this.isBorder = false,
     this.iconColor = CustomColors.black,
+    this.containerSize = 40,
   });
   final IconData icon;
   final Color iconColor;
   final Color? containerColor;
   final bool isBorder;
+  final double containerSize;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
-      width: 40,
+      height: containerSize,
+      width: containerSize,
       decoration: BoxDecoration(
         color: containerColor,
         shape: BoxShape.circle,
@@ -27,7 +30,11 @@ class CircleContainer extends StatelessWidget {
               )
             : null,
       ),
-      child: Icon(icon, color: iconColor),
+      child: Icon(
+        icon,
+        color: iconColor,
+        size: containerSize / 2,
+      ),
     );
   }
 }

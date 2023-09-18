@@ -55,11 +55,6 @@ class CustomAccentBackground extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          decoration: BoxDecoration(
-            color: CustomColors.black.withOpacity(0.5),
-          ),
-        ),
       ],
     );
   }

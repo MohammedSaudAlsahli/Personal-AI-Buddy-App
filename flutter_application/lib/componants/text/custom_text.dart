@@ -12,7 +12,10 @@ class CustomText extends StatelessWidget {
     return Text(
       text,
       style: const TextStyle(
-          color: CustomColors.white, fontSize: 36, fontWeight: FontWeight.w500),
+        color: CustomColors.white,
+        fontSize: 36,
+        fontWeight: FontWeight.w500,
+      ),
       textAlign: TextAlign.center,
     );
   }
